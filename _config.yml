@@ -1,7 +1,3 @@
-# remote_theme: Phlow/feeling-responsive
-# plugins:
-# - jkyll-remote-theme
-
 theme: jekyll-theme-merlot
 title: Tiger Lion Recognizer
 
