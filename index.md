@@ -1,6 +1,6 @@
 ---
 title: Home
-layout: page 
+layout: Page 
 ---
 
 # Tiger Lion Recognizer
