@@ -1,0 +1,51 @@
+---
+title: Recognizer
+layout: page
+---
+
+<input id="photo" type="file">
+<div id="results"></div>
+<!-- <script type="module" src="https://cdn.jsdelivr.net/npm/@gradio/client@0.1.4/dist/index.min.js"></script> -->
+<!-- <script type="module"> -->
+<!-- import { client } from "https://cdn.jsdelivr.net/npm/@gradio/client@0.1.4/dist/index.min.js"; -->
+<script type="module">
+    // import {client} from "@gradio/client"
+    // async function loaded(reader){
+    //     results.innerHTML = `<br/><img src="{reader.result}" width="500">`
+    // }
+    // const sum = () => {
+    //     var a = 10;
+    //     var b = 50;
+    //     console.log(a+b);
+    // }
+    // sum();
+    // import { client } from "https://cdn.jsdelivr.net/npm/@gradio/client@0.1.4/dist/index.min.js";
+    import { client } from "@gradio/client";
+    async function loaded(reader){
+        // results.innerHTML = `<br/> <img src='${reader.result}' width='500'>`;
+        // const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");
+        // const exampleImage = await response_0.blob();
+                                
+        // const app = await client("https://nelbarman053-tiger-lion-recognizer.hf.space/--replicas/zvcqg/");
+        // const result = await app.predict("/predict", [
+        //                 exampleImage, 	// blob in 'image' Image component
+        //     ]);
+
+        // console.log(result.data);
+
+        
+
+        const response_0 = await fetch("https://raw.githubusercontent.com/gradio-app/gradio/main/test/test_files/bus.png");
+        const exampleImage = await response_0.blob();
+                                
+        const app = await client("https://nelbarman053-tiger-lion-recognizer.hf.space/--replicas/zvcqg/");
+        const result = await app.predict("/predict", [
+                        exampleImage, 	// blob in 'image' Image component
+            ]);
+
+        console.log(result.data);
+
+
+    }
+    // loaded();
+</script>
